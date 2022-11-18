@@ -8,7 +8,7 @@ interface EventbusApiRequest extends NextApiRequest {
   data: any;
 }
 
-const service = `${process.env.URL}/api/services`;
+const service = `${process.env.NEXT_PUBLIC_URL}/api/services`;
 
 export default async function eventbus(
   req: EventbusApiRequest,

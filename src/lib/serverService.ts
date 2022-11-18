@@ -1,6 +1,5 @@
 import "server-only";
 
-import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 
 type Service = any;
@@ -8,7 +7,7 @@ type Data = any;
 
 const serverService = async (service: Service, data?: Data) => {
   const nextCookies = cookies();
-  const res = await fetch(`http://localhost:3000/api/eventbus`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/eventbus`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -4,7 +4,7 @@ type Service = any;
 type Data = any;
 
 const clientService = async (service: Service, data?: Data) => {
-  const res = await fetch(`http://localhost:3000/api/eventbus`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/eventbus`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
