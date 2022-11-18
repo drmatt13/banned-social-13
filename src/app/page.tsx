@@ -10,16 +10,6 @@ export default function Home() {
       <div>home</div>
       {/* @ts-expect-error Server Component */}
       <TestServer />
-      {/* @ts-expect-error Server Component */}
-      <TestServer />
-      {/* @ts-expect-error Server Component */}
-      <TestServer />
-      {/* @ts-expect-error Server Component */}
-      <TestServer />
-      {/* @ts-expect-error Server Component */}
-      <TestServer />
-      {/* @ts-expect-error Server Component */}
-      <TestServer />
       {/* <TestClient /> */}
       <Link href="/logout" replace={true}>
         Logout

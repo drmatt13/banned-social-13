@@ -11,6 +11,7 @@ export default function Page() {
     // setLoading(true);
     try {
       const res = await clientService("login");
+      console.log(res);
       if (res.success) {
         cookie.set("token", res.token, { expires: 1 });
         window.location.reload();
