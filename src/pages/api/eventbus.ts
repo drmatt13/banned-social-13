@@ -26,7 +26,7 @@ export default async function eventbus(
       );
       req.body._id = (verifiedToken as { _id: string })._id;
     } catch (error) {
-      sendBeacon(`${service}/event_capture`);
+      // sendBeacon(`${service}/event_capture`);
       console.log(chalk.red.bold(`Invalad Token -> ${req.body.service}`));
       return res.status(401).json({ success: false, error: "Invalad Token" });
     }
@@ -41,7 +41,7 @@ export default async function eventbus(
 
   const protectedRoute = () => {
     if (!req.body._id) {
-      sendBeacon(`${service}/event_capture`);
+      // sendBeacon(`${service}/event_capture`);
       return res.status(401).json({
         success: false,
         error: "Unauthorized",
@@ -66,10 +66,10 @@ export default async function eventbus(
         };
         break;
     }
-    sendBeacon(`${service}/event_capture`);
+    // sendBeacon(`${service}/event_capture`);
     return res.status(200).json({ ...req.data });
   } catch (error) {
-    sendBeacon(`${service}/event_capture`);
+    // sendBeacon(`${service}/event_capture`);
     return res.status(500).json({ success: false, error });
   }
 }
