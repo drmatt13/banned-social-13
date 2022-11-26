@@ -6,7 +6,6 @@ type Service = any;
 type Data = any;
 
 async function getData(service: Service, data?: Data) {
-  // const nextCookies = cookies();
   const res = await fetch(`${process.env.URL}/api/eventbus`, {
     method: "POST",
     headers: {
