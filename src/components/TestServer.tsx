@@ -1,7 +1,15 @@
 import serverService from "@/lib/serverService";
 
-export default async function TestComponent() {
-  const data = await serverService("get user");
+async function getData() {
+  const data = await fetch("http://jsonplaceholder.typicode.com/todos/1");
+  return data.json();
+}
 
-  return <div>user: {data.user}</div>;
+export default async function TestComponent() {
+  // const data = await serverService("get user");
+  const data = await getData();
+
+  console.log(data);
+
+  return <div>user: test</div>;
 }
