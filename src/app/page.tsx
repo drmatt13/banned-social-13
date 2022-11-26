@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 // componenta
-import TestClient from "@/components/TestClient";
+// import TestClient from "@/components/TestClient";
 import TestServer from "@/components/TestServer";
 
 export default function Home() {
@@ -10,7 +10,6 @@ export default function Home() {
       <div>home</div>
       {/* @ts-expect-error Server Component */}
       <TestServer />
-      {/* <TestClient /> */}
       <Link href="/logout" replace={true}>
         Logout
       </Link>
