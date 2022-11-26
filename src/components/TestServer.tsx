@@ -1,6 +1,6 @@
 async function getData() {
   const res = await fetch(`${process.env.URL}/api/test`);
-  return res.json();
+  return await res.json();
 }
 
 export default async function TestComponent() {
