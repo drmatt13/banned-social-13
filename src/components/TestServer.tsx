@@ -11,9 +11,9 @@ async function getData(service: Service, data?: Data) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: nextCookies.get("token")?.value
-        ? `Bearer ${nextCookies.get("token")?.value}`
-        : "",
+      // Authorization: nextCookies.get("token")?.value
+      //   ? `Bearer ${nextCookies.get("token")?.value}`
+      //   : "",
     },
     body: JSON.stringify({ service, ...data }),
   });
