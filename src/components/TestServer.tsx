@@ -6,7 +6,7 @@ async function getData() {
 export default async function TestComponent() {
   const data = await getData();
 
-  console.log(data);
+  // console.log(data);
 
   return <div>{data.success}</div>;
 }
