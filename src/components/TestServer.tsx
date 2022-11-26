@@ -1,16 +1,10 @@
 async function getData() {
-  const res = await fetch(`${process.env.URL}/api/eventbus`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ service: "test" }),
-  });
+  const res = await fetch(`${process.env.URL}/api/eventbus`);
   return res.json();
 }
 
 export default async function TestComponent() {
-  await getData();
+  const data = await getData();
 
   return <div>test</div>;
 }
