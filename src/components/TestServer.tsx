@@ -1,18 +1,8 @@
-// import serverService from "@/lib/serverService";
-
-// import { cookies } from "next/headers";
-
-type Service = any;
-type Data = any;
-
-async function getData(service: Service, data: Data = {}) {
+async function getData(service = "", data = {}) {
   const res = await fetch(`${process.env.URL}/api/eventbus`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      // Authorization: nextCookies.get("token")?.value
-      //   ? `Bearer ${nextCookies.get("token")?.value}`
-      //   : "",
     },
     body: JSON.stringify({ service, ...data }),
   });
@@ -20,8 +10,7 @@ async function getData(service: Service, data: Data = {}) {
 }
 
 export default async function TestComponent() {
-  // const data = await serverService("get user");
-  const data = await getData("test");
+  await getData("test", { test: "test" });
 
-  return <div>data: test</div>;
+  return <div>test</div>;
 }
