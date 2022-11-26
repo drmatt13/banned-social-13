@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-// componenta
 // import TestClient from "@/components/TestClient";
 import TestServer from "@/components/TestServer";
 

@@ -1,5 +1,5 @@
 async function getData() {
-  const res = await fetch(`${process.env.URL}/api/eventbus`);
+  const res = await fetch("http://jsonplaceholder.typicode.com/users");
   return res.json();
 }
 
