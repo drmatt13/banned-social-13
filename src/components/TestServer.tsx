@@ -5,7 +5,7 @@
 type Service = any;
 type Data = any;
 
-async function getData(service: Service, data?: Data) {
+async function getData(service: Service, data: Data = {}) {
   const res = await fetch(`${process.env.URL}/api/eventbus`, {
     method: "POST",
     headers: {
@@ -22,8 +22,6 @@ async function getData(service: Service, data?: Data) {
 export default async function TestComponent() {
   // const data = await serverService("get user");
   const data = await getData("test");
-
-  console.log(data);
 
   return <div>data: test</div>;
 }
